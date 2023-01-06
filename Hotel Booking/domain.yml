@@ -1,0 +1,164 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- faq_breakfast_avail
+- faq_breakfast_time
+- faq_cancel_reservation
+- faq_cancellation_policy
+- faq_check_in_time
+- faq_check_out_time
+- faq_have_restaurant
+- faq_restaurant_time
+- goodbye
+- greet
+- info
+- nlu_fallback
+- room_booking
+entities:
+- name
+- date:
+    roles:
+    - arrival
+    - departure
+- num_person
+- contact_info
+- room_type
+- mail_address
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+  arrival_date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: date
+      role: arrival
+    - type: from_entity
+      entity: date
+  departure_date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: date
+      role: departure
+    - type: from_entity
+      entity: date
+  num_person:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: num_person
+  room_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: room_type
+  contact_info:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: contact_info
+  mail_address:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: mail_address
+responses:
+  utter_greet:
+  - text: Hey! . How may i help you?
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_name:
+  - text: sir, can you please tell me your name?
+  utter_ask_num_person:
+  - text: for how many persons do you want to book a room?
+  utter_ask_arrival_date:
+  - text: hey, {name} can you tell me your arrival date?
+  utter_ask_departure_date:
+  - text: hey, {name} can you tell me your departure date?
+  utter_ask_room_type:
+  - text: Do you want a Delux Room or A Simple Room?
+  utter_ask_contact_info:
+  - text: sir please give me your contact number
+  utter_ask_mail_address:
+  - text: can you tell me your mail address?
+  utter_ask_food:
+  - text: what would you like to take in breakfast?
+  utter_submit:
+  - text: i will now book a room for you.please confirm.
+  utter_booking_slots:
+  - text: Your room is booked in the name {name} for {num_person} persons.We will contact you on this {contact_info}.
+  - text: Thank you for the reservation.
+  utter_ask_anything:
+  - text: do you want to ask any thing?
+  utter_bye:
+  - text: Thank you for giving your time.
+  utter_check_in_time:
+  - text: Check-in time starts at 11 AM. Minimum check-in age is 21. Please contact the reception for early check-in requests.
+  utter_check_out_time:
+  - text: Check-out time is 11 AM. Please contact the reception for late checkout requests.
+  utter_cancel_reservation:
+  - text: To cancel a reservation, select the “Reservations” link from the homepage.
+  utter_cancellation_policy:
+  - text: The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy.
+  utter_have_restaurant:
+  - text: Yes, the hotel has a restaurant.
+  utter_breakfast_avail:
+  - text: The hotel provides its guests with a free made-to-order breakfast each morning.
+  utter_breakfast_time:
+  - text: Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday, we are open from 7 am to 10:30 am.
+  utter_restaurant_time:
+  - text: Our restaurant serves a dazzling 24-hour menu.
+  utter_thankyou:
+  - text: Thank you for giving your time to us.
+actions:
+- utter_ask_anything
+- utter_ask_arrival_date
+- utter_ask_contact_info
+- utter_ask_departure_date
+- utter_ask_food
+- utter_ask_mail_address
+- utter_ask_name
+- utter_ask_num_person
+- utter_ask_room_type
+- utter_booking_slots
+- utter_breakfast_avail
+- utter_breakfast_time
+- utter_bye
+- utter_cancel_reservation
+- utter_cancellation_policy
+- utter_check_in_time
+- utter_check_out_time
+- utter_goodbye
+- utter_greet
+- utter_have_restaurant
+- utter_iamabot
+- utter_restaurant_time
+- utter_submit
+- utter_thankyou
+- validate_simple_hotel_form
+forms:
+  simple_hotel_form:
+    required_slots:
+    - name
+    - num_person
+    - arrival_date
+    - departure_date
+    - room_type
+    - mail_address
+    - contact_info
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

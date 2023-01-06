@@ -1,0 +1,70 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: activate hotel booking form
+  steps:
+  - intent: room_booking
+  - action: simple_hotel_form
+  - active_loop: simple_hotel_form
+
+# - rule: timings
+#   steps:
+#   - intent: room_booking
+#   - action: utter_check_in_time
+#   - action: utter_check_out_time
+
+- rule: greet anytime
+  steps:
+  - intent: greet  
+  - action: utter_greet
+
+- rule: check-in-time
+  steps:
+  - intent: faq_check_in_time
+  - action: utter_check_in_time
+
+- rule: check-out-time
+  steps:
+  - intent: faq_check_out_time
+  - action: utter_check_out_time
+
+- rule: cancel reservation
+  steps:
+  - intent: faq_cancel_reservation
+  - action: utter_cancel_reservation
+
+- rule: cancellation policy
+  steps:
+  - intent: faq_cancellation_policy
+  - action:  utter_cancellation_policy
+
+- rule: have restaurant
+  steps:
+  - intent: faq_have_restaurant
+  - action: utter_have_restaurant
+
+- rule: breakfast avail
+  steps:
+  - intent: faq_breakfast_avail
+  - action: utter_breakfast_avail
+
+- rule: breakfast time
+  steps:
+  - intent: faq_breakfast_time
+  - action: utter_breakfast_time
+
+- rule: restaurant time
+  steps:
+  - intent: faq_restaurant_time
+  - action: utter_restaurant_time

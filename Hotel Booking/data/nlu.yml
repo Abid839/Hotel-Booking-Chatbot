@@ -1,0 +1,429 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hey..
+    - hi..
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you
+    - ok, thank you
+    - ok thank you
+    - ok,thank you
+    - ok
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes confirm
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: room_booking
+  examples: |
+    - i want to book a hotel.
+    - want to book a hotel
+    - book a hotel
+    - book a room
+    - I'd like to make a reservation for next week.
+    - we want to reserve a room
+    - i would like to make reservation
+    - i want to reserve a hotel room on [23/01/2022]{"entity": "date", "role": "arrival"}
+    - reserve a room for [2](num_person) persons
+    - book a room for [4](num_person) person
+    - i am [abid](name) want to book a hotel
+    - i searching for a hotel
+    - we are searching for a hotel room for [7](num_person) persons
+    - i am seraching for a hotel room for [2](num_person) person
+    - is there any hotel near me?
+    - book a hotel for me
+    - book a room for me
+    - book a hotel for [3](num_person) persons
+    - I'm interested in booking a room for the September month
+    - I'd like to book a [simple](room_type) room for two night, please.
+    - I'd like to make a reservation for a [simple](room_type) room for the night, please.
+    - I'd like to book a [deluxe](room_type) room for two nights, please.
+    - I'd like to make a reservation for a [deluxe](room_type) room for the night, please.
+    - I'd like to book a [deluxe](room_type) room for [2](num_person) persons
+    - I'd like to make a reservation for a [deluxe](room_type) room for the night for [1](num_person) person
+    - i want to book a room for person
+    - Hello. I'd like to book a room
+    - Hello. How much is a [deluxe](room_type) room please?
+    - Hello. How much is a [simple](room_type) room please?
+    - book a room in name [abid](name)
+    - i want to book a room from [23/02/2023]{"entity": "date", "role": "arrival"} to [26/02/2023]{"entity": "date", "role": "departure"}
+    - i want to book a room from [12/03/2012]{"entity": "date", "role": "arrival"} to [16/03/2012]{"entity": "date", "role": "departure"} for [2](num_person) person
+    - we want to book a hotel for monday
+    - want to reserve a room on tuesday for [3](num_person) persons
+    - want to book a hotel from [24-08-2023]{"entity": "date", "role": "arrival"} to [25-08-2023]{"entity": "date", "role": "departure"}
+    - book a room from [5-09-2022]{"entity": "date", "role": "arrival"} to [09-09-2022]{"entity": "date", "role": "departure"}
+    - i am [abid](name) want to book a room
+    - book a room on [25/12/2023]{"entity": "date", "role": "arrival"}
+    - book a room for [2](num_person) persons from [24/05/2023]{"entity": "date", "role": "arrival"} to [26/05/2023]{"entity": "date", "role": "departure"}
+    - book a room for [4](num_person) persons from [31/12/2022]{"entity": "date", "role": "arrival"} to [02/01/2023]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons on name [abhi](name) from [03/11/2022]{"entity": "date", "role": "arrival"} to [06/11/2022]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons from [20-02-2021]{"entity": "date", "role": "arrival"} to [24-02-2021]{"entity": "date", "role": "departure"}
+    - book a room for [1](num_person) persons from [30-10-2024]{"entity": "date", "role": "arrival"} to [04-11-2024]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons from [03/06/2025]{"entity": "date", "role": "arrival"} to [04/06/2025]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons from [23/11/2022]{"entity": "date", "role": "arrival"} to [25/11/2022]{"entity": "date", "role": "departure"}
+    - book a room for [3](num_person) persons from [13/09/2023]{"entity": "date", "role": "arrival"} to [18/09/2023]{"entity": "date", "role": "departure"}
+    - book a room for in a name [prattay](name) from [19/01/2030]{"entity": "date", "role": "arrival"} to [24/01/2030]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons  in a name [prakash](name) from [06/03/2022]{"entity": "date", "role": "arrival"} to [09/03/2022]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons  [03-10-2023]{"entity": "date", "role": "arrival"} to [03-12-2023]{"entity": "date", "role": "departure"}
+    - want a room for [2](num_person) persons from [12-12-2022]{"entity": "date", "role": "arrival"} to [14-12-2022]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons in a name [dona](name) from [11/11/2023]{"entity": "date", "role": "arrival"} to [13/11/2023]{"entity": "date", "role": "departure"}
+    - hi i am [manish](name) want book a room for [1](num_person) person from [01-04-2013]{"entity": "date", "role": "arrival"} to [04-04-2025]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons from [12/3/2032]{"entity": "date", "role": "arrival"} to [23/04/2032]{"entity": "date", "role": "departure"}
+    - book a room for [2](num_person) persons from [13/06/2024]{"entity": "date", "role": "arrival"} to [24/06/2024]{"entity": "date", "role": "departure"}
+    - i am [nisha](name) book a room for [3](num_person) persons from [06/10/2024]{"entity": "date", "role": "arrival"} to [07/10/2024]{"entity": "date", "role": "departure"}
+    - want a room  from [18/10/2132]{"entity": "date", "role": "arrival"} to [20/10/2132]{"entity": "date", "role": "departure"}
+    - want a room  from [10/03/2023]{"entity": "date", "role": "arrival"} to [17/03/2023]{"entity": "date", "role": "departure"}
+    - i want to book a room in a name [preeti](name) .
+    - i [abid](name) want to book a room
+    - i want to book a hotel for [2](num_person) person
+    - from [23rd october]{"entity": "date", "role": "arrival"}
+    - i am [abid](name) want to bbook a room from [31-12-2023]{"entity": "date", "role": "arrival"}
+    - i want to book a room from [12-07-2024]{"entity": "date", "role": "arrival"} to [15-07-2024]{"entity": "date", "role": "departure"}
+    - please tell me the check in time
+    - i am [abid](name) want to book a room from [23/12/2032]{"entity": "date", "role": "arrival"} to [25/12/2032]{"entity": "date", "role": "departure"}.
+    - i want to book a room
+    - i want to book a room for [2](num_person) persons
+    - book a room on [25-07-2024]{"entity": "date", "role": "arrival"}
+    - i am looking for a room for [2](num_person) persons
+    - i am [abid](name) want to book a room on [20-10-2020]{"entity": "date", "role": "arrival"}
+    - i want to book a room on [20-09-2024]{"entity": "date", "role": "arrival"} for [3](num_person) persons
+    - i am [abid](name) want to book a room on [19-08-2023]{"entity": "date", "role": "arrival"}
+    - i want to book a room for [2](num_person) person from [24-07-2023]{"entity": "date", "role": "arrival"} to [26-07-2023]{"entity": "date", "role": "departure"}
+    - i want to book a room in name [abid](name)
+    - do you have available rooms
+    - do you have available rooms?
+    - i want to book a room in name [sahil](name)
+- intent: info
+  examples: |
+    - my name is [abid](name)
+    - i am [abid](name)
+    - [deluxe](room_type)
+    - [simple](room_type)
+    - [24/12/2023](date)
+    - [10/08/203](date)
+    - upto [02/12/2032](date)
+    - [4](num_person)
+    - [10](num_person)
+    - [1](num_person)
+    - [sahil](name)
+    - [aizan](name)
+    - [prakash saha](name)
+    - [vashkar mandal](name)
+    - [riya](name)
+    - [hassan](name)
+    - my name is [riya hossain](name)
+    - i am [prattay saha](name)
+    - on [03/05/2024]{"entity": "date", "role": "arrival"}
+    - form [02/04/2025]{"entity": "date", "role": "arrival"} to [04/12/2024]{"entity": "date", "role": "departure"}
+    - i will arrive on [11/12/2024]{"entity": "date", "role": "arrival"}
+    - book a room for 3 days
+    - my number is [7477725295](contact_info)
+    - contact number [9755431234](contact_info)
+    - contact info [9988774455](contact_info)
+    - contact me on [7856342111](contact_info)
+    - number [9876541233](contact_info)
+    - my contact info [8798765543](contact_info)
+    - my number [9089769088](contact_info)
+    - my contact number [7477651232](contact_info)
+    - [7477725295](contact_info)
+    - [9907885253](contact_info)
+    - [8207024906](contact_info)
+    - [9807562314](contact_info)
+    - [8790456321](contact_info)
+    - [9845673212](contact_info)
+    - my name is [asif ekbal](name)
+    - [6](num_person)
+    - [7657890099](contact_info)
+    - [1234567889](contact_info)
+    - [11](num_person)
+    - we are [10](num_person)
+    - for [8](num_person) persons
+    - for [10](num_person) persons
+    - my name is [moon](name)
+    - my name is [rabi kumar](name)
+    - for [6](num_person) persons
+    - [8978987898](contact_info)
+    - [puja](name)
+    - [9999999999](contact_info)
+    - [10](num_person) persons
+    - my contact number is [1232145677](contact_info)
+    - [12](num_person)
+    - [7](num_person)
+    - [8](num_person)
+    - [1234567898](contact_info)
+    - [8976899845](contact_info)
+    - [usuf sk](name)
+    - [9876543211](contact_info)
+    - my name is [avi](name)
+    - i am [rick](name)
+    - [sneha](name)
+    - [jack](name)
+    - i am [jack](name)
+    - [7896541221](contact_info)
+    - [3](num_person) persons
+    - [9876543321](contact_info)
+    - [sahil hossain](name)
+    - [7477576557](contact_info)
+    - i want a [simple](room_type) room
+    - i want a [deluxe](room_type) bed room
+    - [deluxe](room_type) bed room
+    - [simple](room_type) bed room
+    - to [02/05/2023]{"entity": "date", "role": "departure"}
+    - from [13-06-2025]{"entity": "date", "role": "arrival"} to [15-06-2025]{"entity": "date", "role": "departure"}
+    - to [15-09-2024]{"entity": "date", "role": "departure"}
+    - my email address is [sahilhossain263@gmail.com](mail_address)
+    - [iamhossain@gmail.com](mail_address)
+    - [asif23@gmail.com](mail_address)
+    - [aizanzafar@gamil.comm](mail_address)
+    - [rohan123@gamil.com](mail_address)
+    - [raj5@gamil.com](mail_address)
+    - [abidhossain@gmail.com](mail_address)
+    - [shehenaz@gmail.com](mail_address)
+    - [hassan.ja@gmail.com](mail_address)
+    - my email is [prattaysaha31@gmail.com](mail_address)
+    - [vashkarvm@gmail.com](mail_address)
+    - [usufsk@gmail.com](mail_address)
+    - contact me [adisharma99@gmail.com](mail_address)
+    - contact me on [rick987@gmail.com](mail_address)
+    - upto [30-11-2026]{"entity": "date", "role": "departure"}
+    - to [01/06/2024]{"entity": "date", "role": "departure"}
+    - upto [15/09/2023]{"entity": "date", "role": "departure"}
+    - to [02/11/2023]{"entity": "date", "role": "departure"}
+    - to [25/10/2034]{"entity": "date", "role": "departure"}
+    - i am [abid hossain](name)
+    - [deluxe](room_type) bed
+    - [xyza@gmail.com](mail_address)
+    - [2](num_person) persons
+    - [asdfg@gmail.com](mail_address)
+    - [1234567899](contact_info)
+    - [23/12/2023](date)
+    - [2510/2022](date)
+    - [axd23@gmail.com](mail_address)
+    - [Abid Hossain](name)
+    - on [25/10/2025]{"entity": "date", "role": "arrival"}
+    - to [2710/2024]{"entity": "date", "role": "departure"}
+    - [abd23@gmail.com](mail_address)
+    - [1425367894](contact_info)
+    - [2](num_person) person
+    - [09-09-2033](date)
+    - [aes@gmail.com](mail_address)
+    - [2134567894](contact_info)
+    - [ase@gmail.com](mail_address)
+    - [1452637894](contact_info)
+    - [bdc@gmail.com](mail_address)
+    - on [23/06/2023]{"entity": "date", "role": "arrival"}
+    - [25/02/2023](date)
+    - [acd@gmail.com](mail_address)
+    - [abid](name)
+    - [09/10/2024](date)
+    - i will arrive on [02/03/2025]{"entity": "date", "role": "arrival"}
+    - [03/01/2023](date)
+    - [abf@gmail.com](mail_address)
+    - [7412589632](contact_info)
+    - [arun](name)
+    - [08/08/2025](date)
+    - [cvgb@gmail.com](mail_address)
+    - [1234321234](contact_info)
+    - [sunny sharma](name)
+    - [25/12/2024](date)
+    - [29/11/2025](date)
+    - upto [30/09/2026]{"entity": "date", "role": "departure"}
+    - [delux](room_type)
+    - [anvfd@redif.mail.com](mail_address)
+    - [24/03/2028](date)
+    - [Delux](room_type)
+    - [ascg@gmail.com](mail_address)
+    - [4561237894](contact_info)
+    - [iliyash](name)
+    - [3](num_person)
+    - [svujioftc@gmail.copm](mail_address)
+    - [simple](room_type) room
+    - [escca@gmail.com](mail_address)
+    - [usuf](name)
+    - [aabidhoss@gmail.com](mail_address)
+    - [4](num_person) persons
+    - [adbaidih@gmail.com](mail_address)
+    - [prakash kumar saha](name)
+    - [14/02/2023](date)
+    - on [21/08/2029]{"entity": "date", "role": "arrival"}
+    - upto [14/03/2030]{"entity": "date", "role": "departure"}
+    - [syfyufy@gmail.com](mail_address)
+    - [121232434](contact_info)
+    - [2](num_person) persons
+    - [12-09-2043](date)
+    - [15/09/2043](date)
+    - [delux](room_type)
+    - [huiibibyg@gmail.co](mail_address)
+    - [3456789921](contact_info)
+- intent: faq_check_in_time
+  examples: |
+    - what are your check-in timings?
+    - check in timings?
+    - check in time
+    - what is the check-in time?
+    - what is the check in time?
+    - can you tell me your check-in timings?
+    - can you tell me your check in timings?
+    - i would like to know your check-in timings
+    - tell your check-in timings
+    - when can I check in?
+    - check-in?
+    - could you tell me when to check-in?
+    - when check in?
+    - i want to check in. can you tell me check in timing?
+- intent: faq_check_out_time
+  examples: |
+    - what are your check-out timings?
+    - check out timings?
+    - check out time
+    - what is the check-in time?
+    - what is the check in time?
+    - can you tell me your check-out timings?
+    - can you tell me your check out timings?
+    - i would like to know your check-out timings
+    - tell your check-out timings
+    - when can I check out?
+    - check-out?
+    - could you tell me when to check-out?
+    - when check in?
+    - i want to check out. can you tell me check out timings?
+    - tell me the check out tme
+- intent: faq_cancel_reservation
+  examples: |
+    - i want to cancel the reservation that i made
+    - cancel my reservation that i made earlier
+    - i would like to cancel my reservation
+    - cancel my reservation
+    - can you cancel my reservation?
+    - how do i cancel my reservation?
+    - can i cancel my reservation?
+    - please cancel my reservation
+    - i request you to cancel the reservation that i made
+    - it would be great if you could cancel my reservation
+    - i want to cancel the reservation
+- intent: faq_cancellation_policy
+  examples: |
+    - what is your cancellation policy?
+    - can you state your cancellation policy
+    - i would like to know your cancellation policy
+    - show me your cancellation policy
+    - do you have any cancellation policy?
+    - i want to see your cancellation policy
+    - where is your cancellation policy?
+    - tell me about cancelation policy
+    - what is the cancelation policy
+- intent: faq_have_restaurant
+  examples: |
+    - does the hotel have a restaurant?
+    - do you have a restaurant?
+    - is there a restaurant?
+    - is there a restaurant in the hotel?
+    - tell me about the restaurant
+    - can you tell me about any restaurant in the hotel?
+    - are there restaurants in the hotel?
+    - number of restaurants?
+    - can i find restaurants here?
+    - i heard there is a restaurant also
+    - inform me about the restaurant
+    - where is restaurant?
+    - do you have restaurent?
+- intent: faq_breakfast_avail
+  examples: |
+    - does the hotel offer breakfast?
+    - is there breakfast offered by the hotel?
+    - is breakfast facility available?
+    - is breakfast there?
+    - can i get breakfast here?
+    - do you provide breakfast?
+    - breakfast?
+    - do you serve breakfast?
+    - is breakfast available?
+    - do you offer breakfast?
+- intent: faq_breakfast_time
+  examples: |
+    - what is the time for breakfast?
+    - time for doing breakfast?
+    - what are the breakfast timings?
+    - can you tell me about timings of breakfast?
+    - tell me about breakfast timings
+    - want to know about breakfast timings
+    - breakfast timings what are they?
+    - when is breakfast served?
+    - which time is the breakfast served?
+    - you serve breakfast at what time?
+    - what is the timing for breakfast?
+- intent: faq_restaurant_time
+  examples: |
+    - what are timings of your restaurant?
+    - what is the time of the restaurant?
+    - timings of restaurant
+    - restaurant open time
+    - restaurant open timings
+    - restaurant timings
+    - till when restaurant remain open?
+    - till what time will the restaurant remain open?
+    - can you share the timings of restaurant?
+    - what is the restaurent timing?
+- intent: nlu_fallback
+  examples: |
+    - [abhhishek](name)
+    - [iliyash akhtar](name)
+- regex: arrival
+  examples: |
+    - /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$
+- regex: departure
+  examples: |
+    - /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$
+- regex: num_person
+  examples: |
+    - \d{1,2}
+- regex: contact_info
+  examples: |
+    - \d{10}
+- regex: room_type
+  examples: |
+    - .

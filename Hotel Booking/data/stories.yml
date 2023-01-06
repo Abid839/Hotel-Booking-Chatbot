@@ -1,0 +1,65 @@
+version: "3.1"
+
+stories:
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: room_booking
+    entities:
+    - name: sahil
+  - slot_was_set:
+    - name: sahil
+  - action: simple_hotel_form
+  - active_loop: simple_hotel_form
+  - slot_was_set:
+    - name: sahil
+  - slot_was_set:
+    - name: sahil
+  - slot_was_set:
+    - requested_slot: num_person
+  - slot_was_set:
+    - num_person: '2'
+  - slot_was_set:
+    - num_person: '2'
+  - slot_was_set:
+    - requested_slot: arrival_date
+  - slot_was_set:
+    - arrival_date: 12-09-2043
+  - slot_was_set:
+    - arrival_date: 12-09-2043
+  - slot_was_set:
+    - requested_slot: departure_date
+  - slot_was_set:
+    - departure_date: 15/09/2043
+  - slot_was_set:
+    - departure_date: 15/09/2043
+  - slot_was_set:
+    - requested_slot: room_type
+  - slot_was_set:
+    - room_type: delux
+  - slot_was_set:
+    - room_type: delux
+  - slot_was_set:
+    - requested_slot: mail_address
+  - slot_was_set:
+    - mail_address: huiibibyg@gmail.co
+  - slot_was_set:
+    - mail_address: huiibibyg@gmail.co
+  - slot_was_set:
+    - requested_slot: contact_info
+  - slot_was_set:
+    - contact_info: '3456789921'
+  - slot_was_set:
+    - contact_info: '3456789921'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: affirm
+  - action: utter_booking_slots
+  - action: utter_ask_anything
+  - intent: deny
+  - action: utter_bye

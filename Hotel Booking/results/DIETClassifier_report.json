@@ -1,0 +1,76 @@
+{
+  "date.departure": {
+    "precision": 0.9529411764705882,
+    "recall": 0.9878048780487805,
+    "f1-score": 0.9700598802395209,
+    "support": 82,
+    "confused_with": {
+      "num_person": 1
+    }
+  },
+  "mail_address": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 44,
+    "confused_with": {}
+  },
+  "num_person": {
+    "precision": 0.9428571428571428,
+    "recall": 0.7857142857142857,
+    "f1-score": 0.8571428571428571,
+    "support": 42,
+    "confused_with": {
+      "contact_info": 9
+    }
+  },
+  "date.arrival": {
+    "precision": 1.0,
+    "recall": 0.9428571428571428,
+    "f1-score": 0.9705882352941176,
+    "support": 70,
+    "confused_with": {
+      "date.departure": 4
+    }
+  },
+  "contact_info": {
+    "precision": 0.7428571428571429,
+    "recall": 1.0,
+    "f1-score": 0.8524590163934427,
+    "support": 26,
+    "confused_with": {}
+  },
+  "room_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 15,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9493243243243243,
+    "recall": 0.9525423728813559,
+    "f1-score": 0.9509306260575295,
+    "support": 295
+  },
+  "macro avg": {
+    "precision": 0.9483793517406963,
+    "recall": 0.9594823295171727,
+    "f1-score": 0.9500357127242769,
+    "support": 295
+  },
+  "weighted avg": {
+    "precision": 0.9561202107961828,
+    "recall": 0.9525423728813559,
+    "f1-score": 0.9513560036490117,
+    "support": 295
+  },
+  "accuracy": 0.9845201238390093
+}
